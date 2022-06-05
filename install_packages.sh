@@ -33,6 +33,7 @@ pacman -Sy --needed --noconfirm \
 		ninja \
 		openssl \
 		python3 \
+		python-pip \
 		uboot-tools \
 		zstd
 
