@@ -40,6 +40,12 @@ pacman -Sy --needed --noconfirm \
 pacman -Sy --needed --noconfirm \
 	tmate tmux htop
 
+# Symlinks for python an
+ln -sf /usr/bin/pip3.10 /usr/bin/pip3
+ln -sf /usr/bin/pip3.10 /usr/bin/pip
+ln -sf /usr/bin/python3.10 /usr/bin/python3
+ln -sf /usr/bin/python3.10 /usr/bin/python
+
 # python and pip version
 python3 --version; pip3 --version
 
