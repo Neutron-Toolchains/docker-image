@@ -33,7 +33,7 @@ jobs:
           git config --global user.email $GITHUB_EMAIL
       - name: Logging in to Docker
         run: |
-          echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_ORG --password-stdin
+          echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_USERNAME --password-stdin
       - name: Building the Image
         run: |
           docker build -t ghcr.io/${GITHUB_ORG}/${IMAGE_NAME}:${IMAGE_TAG} .
