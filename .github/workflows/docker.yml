@@ -3,7 +3,7 @@ name: Build and Push
 on:
   push:
     branches:
-      - arch
+      - arch-neutron
   workflow_dispatch:
    
 env:
@@ -11,12 +11,13 @@ env:
   # Use Lowercase vaue of your Username
   GITHUB_USERNAME: dakkshesh07
   GITHUB_EMAIL: dakkshesh5@gmail.com
+  GITHUB_ORG: neutron-toolchains
 
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   # Image name and tag. MUST be lowercase
-  IMAGE_NAME: docker
-  IMAGE_TAG: arch
+  IMAGE_NAME: docker-image
+  IMAGE_TAG: arch-neutron
 
 jobs:
   push:
@@ -32,11 +33,11 @@ jobs:
           git config --global user.email $GITHUB_EMAIL
       - name: Logging in to Docker
         run: |
-          echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_USERNAME --password-stdin
+          echo $GITHUB_TOKEN | docker login ghcr.io -u $GITHUB_ORG --password-stdin
       - name: Building the Image
         run: |
-          docker build -t ghcr.io/${GITHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG} .
+          docker build -t ghcr.io/${GITHUB_ORG}/${IMAGE_NAME}:${IMAGE_TAG} .
           echo "Build Completed Successfully!"
       - name: Pushing the Image
         run: |
-          docker push ghcr.io/${GITHUB_USERNAME}/${IMAGE_NAME}:${IMAGE_TAG}
+          docker push ghcr.io/${GITHUB_ORG}/${IMAGE_NAME}:${IMAGE_TAG}
