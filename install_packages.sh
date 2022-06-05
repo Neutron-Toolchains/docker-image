@@ -32,6 +32,7 @@ pacman -Sy --needed --noconfirm \
 		multilib-devel \
 		ninja \
 		openssl \
+		patchelf \
 		python3 \
 		python-pip \
 		uboot-tools \
