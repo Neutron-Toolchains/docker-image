@@ -41,13 +41,11 @@ pacman -Sy --needed --noconfirm \
 	tmate tmux htop
 
 # python and pip version
-python --version; pip --version
+python3 --version; pip3 --version
 
 # Install Some pip packages
-pip install \
+pip3 install \
 	telegram-send
-
-cd -
 
 echo 'package installtion completed'
 
