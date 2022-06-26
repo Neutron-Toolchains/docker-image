@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - arch-neutron
+  schedule:
+      # Every Friday at 11:30PM UTC
+      - cron: "30 23 * * 5"
   workflow_dispatch:
    
 env:
