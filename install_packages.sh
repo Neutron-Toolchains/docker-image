@@ -8,36 +8,36 @@ pacman -Syyu --needed --noconfirm 2>&1 | grep -v "warning: could not get file in
 
 # Install Development Packages
 pacman -Sy --needed --noconfirm \
-		sudo \
-		nano \
-		git \
-		curl \
-		wget \
-		rsync \
-		aarch64-linux-gnu-binutils \
-		base-devel \
-		bc \
-		bison \
-		ccache \
-		clang \
-		cpio \
-		cmake \
-		flex \
-		gcc \
-		gcc-libs \
-		libelf \
-		lld \
-		lz4 \
-		llvm \
-		multilib-devel \
-		ninja \
-		openssl \
-		patchelf \
-		pv \
-		python3 \
-		python-pip \
-		uboot-tools \
-		zstd
+	sudo \
+	nano \
+	git \
+	curl \
+	wget \
+	rsync \
+	aarch64-linux-gnu-binutils \
+	base-devel \
+	bc \
+	bison \
+	ccache \
+	clang \
+	cpio \
+	cmake \
+	flex \
+	gcc \
+	gcc-libs \
+	libelf \
+	lld \
+	lz4 \
+	llvm \
+	multilib-devel \
+	ninja \
+	openssl \
+	patchelf \
+	pv \
+	python3 \
+	python-pip \
+	uboot-tools \
+	zstd
 
 # More Packages
 pacman -Sy --needed --noconfirm \
@@ -50,11 +50,11 @@ ln -sf /usr/bin/python3.10 /usr/bin/python3
 ln -sf /usr/bin/python3.10 /usr/bin/python
 
 # python and pip version
-python3 --version; pip3 --version
+python3 --version
+pip3 --version
 
 # Install Some pip packages
 pip3 install \
 	telegram-send
 
 echo 'package installtion completed'
-
