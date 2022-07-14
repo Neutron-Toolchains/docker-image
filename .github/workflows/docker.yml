@@ -5,8 +5,8 @@ on:
     branches:
       - arch-neutron
   schedule:
-      # Every Friday at 11:30PM UTC
-      - cron: "30 23 * * 5"
+      # Every Saturday at 1:30AM UTC
+      - cron: "30 01 * * 6"
   workflow_dispatch:
    
 env:
