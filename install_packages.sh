@@ -37,6 +37,7 @@ pacman -Sy --needed --noconfirm \
 	python3 \
 	python-pip \
 	uboot-tools \
+	zip \
 	zstd
 
 # More Packages
