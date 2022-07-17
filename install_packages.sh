@@ -33,6 +33,7 @@ pacman -Sy --needed --noconfirm \
 	ninja \
 	openssl \
 	patchelf \
+	perl \
 	python3 \
 	python-pip \
 	uboot-tools \

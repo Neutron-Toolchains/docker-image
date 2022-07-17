@@ -18,6 +18,9 @@ COPY rootfs /
 COPY ./install_packages.sh /tmp/
 RUN bash /tmp/install_packages.sh
 
+# Modify $PATH to include perl binaries
+ENV PATH="/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:${PATH}"
+
 # Configuration
 COPY ./config.sh /tmp/
 RUN bash /tmp/config.sh
