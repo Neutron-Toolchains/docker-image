@@ -25,6 +25,7 @@ pacman -Sy --needed --noconfirm \
 	flex \
 	gcc \
 	gcc-libs \
+	jemalloc \
 	jdk-openjdk \
 	libelf \
 	lld \
