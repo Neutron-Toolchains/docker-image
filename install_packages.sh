@@ -35,6 +35,7 @@ pacman -Sy --needed --noconfirm \
 	ninja \
 	openssl \
 	patchelf \
+	perf \
 	perl \
 	python3 \
 	python-pip \
