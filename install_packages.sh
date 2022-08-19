@@ -3,11 +3,35 @@
 # Uncomment community [multilib] repository
 sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
+# Refresh mirror list
+pacman-key --init
+pacman -Syu --noconfirm reflector rsync curl git base-devel 2>&1 | grep -v "warning: could not get file information"
+reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+# Download fresh package databases from the servers
+pacman -Syy
+
+# Create a non-root user for yay to install packages from AUR
+useradd -m -G wheel -s /bin/bash auruser
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# AUR Packages
+sudo -u auruser yay -S --noconfirm \
+	alhp-keyring alhp-mirrorlist
+
+# Enable ALHP repos
+sed -i "/\[core-x86-64-v3\]/,/Include/"'s/^#//' /etc/pacman.conf
+sed -i "/\[extra-x86-64-v3\]/,/Include/"'s/^#//' /etc/pacman.conf
+sed -i "/\[community-x86-64-v3\]/,/Include/"'s/^#//' /etc/pacman.conf
+
+# Check if ALHP repos are uncomented properly
+cat /etc/pacman.conf
+
 # Update
-pacman -Syyu --needed --noconfirm 2>&1 | grep -v "warning: could not get file information"
+pacman -Syyu --noconfirm 2>&1 | grep -v "warning: could not get file information"
 
 # Install Development Packages
-pacman -Sy --needed --noconfirm \
+pacman -Sy --noconfirm \
 	sudo \
 	nano \
 	git \
@@ -45,7 +69,7 @@ pacman -Sy --needed --noconfirm \
 	zstd
 
 # More Packages
-pacman -Sy --needed --noconfirm \
+pacman -Sy --noconfirm \
 	tmate tmux htop
 
 # Symlinks for python an
