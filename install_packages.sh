@@ -48,6 +48,7 @@ pacman -Sy --noconfirm \
 	flex \
 	gcc \
 	gcc-libs \
+	github-cli \
 	gperf \
 	jemalloc \
 	jdk-openjdk \
