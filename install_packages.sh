@@ -72,6 +72,11 @@ pacman -Sy --noconfirm \
 pacman -Sy --noconfirm \
 	tmate tmux htop
 
+# Custom ZSTD package
+wget https://github.com/dakkshesh07/zstd-pkgbuild/releases/download/1.5.2-8/zstd-1.5.2-8-x86_64.pkg.tar.zst
+pacman -U zstd-1.5.2-8-x86_64.pkg.tar.zst
+rm -rf zstd-1.5.2-8-x86_64.pkg.tar.zst
+
 # Symlinks for python an
 ln -sf /usr/bin/pip3.10 /usr/bin/pip3
 ln -sf /usr/bin/pip3.10 /usr/bin/pip
