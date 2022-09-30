@@ -20,8 +20,6 @@ sudo -u auruser yay -S --noconfirm \
 	alhp-keyring alhp-mirrorlist
 
 # Enable ALHP repos
-sed -i 's/#Server/Server/g' /etc/pacman.d/alhp-mirrorlist
-sed -e '/Worldwide/,+1 s/^/#/' /etc/pacman.d/alhp-mirrorlist
 sed -i "/\[core-x86-64-v3\]/,/Include/"'s/^#//' /etc/pacman.conf
 sed -i "/\[extra-x86-64-v3\]/,/Include/"'s/^#//' /etc/pacman.conf
 sed -i "/\[community-x86-64-v3\]/,/Include/"'s/^#//' /etc/pacman.conf
