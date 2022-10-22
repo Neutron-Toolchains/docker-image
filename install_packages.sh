@@ -56,6 +56,7 @@ pacman -Sy --noconfirm \
 	llvm \
 	multilib-devel \
 	ninja \
+	openmp \
 	openssl \
 	patchelf \
 	perf \
